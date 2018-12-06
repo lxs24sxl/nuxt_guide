@@ -1,5 +1,5 @@
 {
-  "name": "nuxt_guide",
+  "name": "lxs24sxl_nuxt",
   "version": "1.0.0",
   "description": "My top-notch Nuxt.js project",
   "author": "lxs24sxl",
@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.0.0",
+    "axios": "^0.18.0",
     "element-ui": "^2.4.6",
     "koa": "^2.5.2",
     "kz-commit": "^1.1.0",

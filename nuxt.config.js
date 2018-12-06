@@ -10,6 +10,9 @@ module.exports = {
     title: pkg.name,
     meta: [
       { charset: 'utf-8' },
+      { name: 'renderer', content: 'webkit' },
+      { name: 'force-rendering', content: 'webkit' },
+      { name: 'X-UA-Compatible', content: 'IE=edge,chrome=1' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: pkg.description }
     ],
@@ -61,12 +64,12 @@ module.exports = {
     extend(config, ctx) {
       // Run ESLint on save
       if (ctx.isDev && ctx.isClient) {
-        config.module.rules.push({
-          enforce: 'pre',
-          test: /\.(js|vue)$/,
-          loader: 'eslint-loader',
-          exclude: /(node_modules)/
-        })
+        // config.module.rules.push({
+        //   enforce: 'pre',
+        //   test: /\.(js|vue)$/,
+        //   loader: 'eslint-loader',
+        //   exclude: /(node_modules)/
+        // })
       }
     }
   }
