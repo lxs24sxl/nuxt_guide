@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="posts-wrapper">
     <h1>{{asyncData.title}}</h1> 
     <h2>{{asyncData.desc}}</h2> 
     <h3>{{data.title}}</h3>
@@ -19,16 +19,20 @@ export default {
   //   }
   // },
   asyncData ({ app, error }) {
-    return app.$axios.$get(`http://localhost:9000/api`)
-      .then(res => {
-        return { asyncData: res.data }
-      })
-      .catch(err => {
-        error({ statusCode: 404, message: 'post not found'})
-      })
+    // return app.$axios.$get(`http://localhost:9000/api`)
+    //   .then(res => {
+    //     return { asyncData: res.data }
+    //   })
+      // .catch(err => {
+      //   error({ statusCode: 404, message: 'post not found'})
+      // })
   },
   data () {
     return {
+      asyncData: {
+        title: 'testTitle',
+        desc: 'test'
+      },
       data: {
         title: 'dsada',
         desc: 'dasdasdas'
@@ -37,3 +41,11 @@ export default {
   }
 }
 </script>
+
+<style lang="less" scoped>
+.posts-wrapper {
+  h3 {
+    color: blue;
+  }
+}
+</style>

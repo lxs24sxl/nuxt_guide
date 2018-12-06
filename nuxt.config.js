@@ -30,7 +30,8 @@ module.exports = {
   ** Global CSS
   */
   css: [
-    'element-ui/lib/theme-chalk/index.css'
+    'element-ui/lib/theme-chalk/index.css',
+    { src: '~assets/css/index.scss', lang: 'scss' }
   ],
 
   /*
@@ -62,6 +63,13 @@ module.exports = {
   */
   build: {
     vendor: ['~/plugins/vue-notifications'],
+    postcss: [
+      require('postcss-nested')(),
+
+      require('postcss-responsive-type')(),
+
+      require('postcss-hexrgba')(),
+    ],
     /*
     ** You can extend webpack config here
     */
@@ -75,6 +83,9 @@ module.exports = {
         //   exclude: /(node_modules)/
         // })
       }
+      // const vueLoader = config.module.rules.find((rule) => rule.loader === 'vue-loader');
+
+      // vueLoader.options.loaders.sass = 'vue-style-loader!css-loader!less-loader';
     }
   }
 }
