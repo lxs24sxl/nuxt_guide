@@ -1,7 +1,7 @@
 <template>
   <section class="container">
     <div>
-      <logo/>
+      <logo />
       <h1 class="title">
         nuxt_guide
       </h1>
@@ -12,11 +12,13 @@
         <a
           href="https://nuxtjs.org/"
           target="_blank"
-          class="button--green">Documentation</a>
+          class="button--green"
+        >Documentation</a>
         <a
           href="https://github.com/nuxt/nuxt.js"
           target="_blank"
-          class="button--grey">GitHub</a>
+          class="button--grey"
+        >GitHub</a>
       </div>
     </div>
   </section>
@@ -24,10 +26,20 @@
 
 <script>
 import Logo from '~/components/Logo.vue'
-
 export default {
   components: {
     Logo
+  },
+  created() {
+    this.showLoginError()
+  },
+  notifications: {
+    showLoginError: {
+      // You can have any name you want instead of 'showLoginError'
+      title: 'Login Failed',
+      message: 'Failed to authenticate',
+      type: 'error' // You also can use 'VueNotifications.types.error' instead of 'error'
+    }
   }
 }
 </script>

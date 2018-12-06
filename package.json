@@ -19,7 +19,8 @@
     "element-ui": "^2.4.6",
     "koa": "^2.5.2",
     "kz-commit": "^1.1.0",
-    "nuxt": "^2.0.0"
+    "nuxt": "^2.0.0",
+    "vue-notifications": "^0.9.0"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.1",

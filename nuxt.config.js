@@ -37,7 +37,8 @@ module.exports = {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    '@/plugins/element-ui'
+    '@/plugins/element-ui',
+    '@/plugins/vue-notifications'
   ],
 
   /*
@@ -58,6 +59,7 @@ module.exports = {
   ** Build configuration
   */
   build: {
+    vendor: ['~/plugins/vue-notifications'],
     /*
     ** You can extend webpack config here
     */
