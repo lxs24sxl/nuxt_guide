@@ -19,6 +19,7 @@
           target="_blank"
           class="button--grey"
         >GitHub</a>
+        {{name}}
         <i class="fa fa-wheelchair" aria-hidden="true"></i>
         <el-button type="primary" @click="login">Login</el-button>
       </div>
@@ -39,6 +40,12 @@ export default {
       message: 'Failed to authenticate',
       type: 'error' // You also can use 'VueNotifications.types.error' instead of 'error'
     }
+  },
+  asyncData(ctx) {
+    return {
+      name: ctx.store.state.name,
+    }
+    // ctx.redirect({path: '/posts'})
   },
   methods: {
     login() {
