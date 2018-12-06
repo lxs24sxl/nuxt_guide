@@ -17,8 +17,10 @@
     "@nuxtjs/axios": "^5.0.0",
     "axios": "^0.18.0",
     "element-ui": "^2.4.6",
+    "font-awesome": "^4.7.0",
     "koa": "^2.5.2",
     "kz-commit": "^1.1.0",
+    "mini-toastr": "^0.8.1",
     "nuxt": "^2.0.0",
     "vue-notifications": "^0.9.0"
   },

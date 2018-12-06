@@ -19,6 +19,8 @@
           target="_blank"
           class="button--grey"
         >GitHub</a>
+        <i class="fa fa-wheelchair" aria-hidden="true"></i>
+        <el-button type="primary" @click="login">Login</el-button>
       </div>
     </div>
   </section>
@@ -30,9 +32,6 @@ export default {
   components: {
     Logo
   },
-  created() {
-    this.showLoginError()
-  },
   notifications: {
     showLoginError: {
       // You can have any name you want instead of 'showLoginError'
@@ -40,6 +39,15 @@ export default {
       message: 'Failed to authenticate',
       type: 'error' // You also can use 'VueNotifications.types.error' instead of 'error'
     }
+  },
+  methods: {
+    login() {
+      this.$message({ message: "登录成功", type: 'success' })
+      this.showLoginError()
+    }
+  },
+  mounted() {
+    this.$myInjectedFunction('test')
   }
 }
 </script>

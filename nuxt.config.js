@@ -37,8 +37,9 @@ module.exports = {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    '@/plugins/element-ui',
-    '@/plugins/vue-notifications'
+    { src: '@/plugins/element-ui' },
+    { src: '@/plugins/vue-notifications.js', ssr: false },
+    { src: "@/plugins/vue-inject.js" }
   ],
 
   /*
@@ -46,7 +47,8 @@ module.exports = {
   */
   modules: [
     // Doc: https://github.com/nuxt-community/axios-module#usage
-    '@nuxtjs/axios'
+    '@nuxtjs/axios',
+    '@/modules/modules.js'
   ],
   /*
   ** Axios module configuration
