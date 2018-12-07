@@ -30,7 +30,7 @@ export const state = () => ({
 
 export const mutations = () => ({
   TOGGLE_NAME: state => {
-    state.name = state.name == 'lxs' ? 'lxs24sxl' : 'lxs'
+    state.name = state.name === 'lxs' ? 'lxs24sxl' : 'lxs'
   },
   TOGGLE_INDEX: (state, current) => {
     state.current = current

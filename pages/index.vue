@@ -19,8 +19,9 @@
           target="_blank"
           class="button--grey"
         >GitHub</a>
-        {{name}}
+        {{$store.state.name}}
         <i class="fa fa-wheelchair" aria-hidden="true"></i>
+        {{$store.state.user.result}}
         <el-button type="primary" @click="login">Login</el-button>
       </div>
     </div>

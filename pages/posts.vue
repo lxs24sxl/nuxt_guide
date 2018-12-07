@@ -5,12 +5,15 @@
     <h3>{{data.title}}</h3>
     <h3>{{data.desc}}</h3>
     {{name}}
+    -
+    {{result}}
+    <el-button @click="test">测试</el-button>
     <img src="~assets/failed.jpg" alt="failed">
   </div>
 </template>
 
 <script>
-import { mapState  } from 'vuex'
+import { mapState, mapMutations, mapActions  } from 'vuex'
 export default {
   layout: 'blog',
   // async asyncData ({ params }) {
@@ -19,7 +22,11 @@ export default {
   //     asyncData: res.data.data
   //   }
   // },
-  fetch ({store, params}) {
+  async fetch ({store, params}) {
+    // await store.dispatch("user/GET_RESULT")
+    // store.commit('user/SET_RESULT', '测试lxs')
+    // store.dispatch("user/GET_RESULT")
+    // this.getResult()
   },
   asyncData ({ app, error }) {
     // return app.$axios.$get(`http://localhost:9000/api`)
@@ -43,12 +50,31 @@ export default {
     }
   },
   computed: {
+    result () {
+      return this.$store.state.user.result
+    },
     ...mapState([
       'name'
-    ])
+    ]),
   },
   mounted() {
-    console.log('this.$store', this.$store)
+    // this.$store.commit('user/SET_RESULT', '测试测试')
+    // console.log('setResult', setResult)
+  },
+  methods: {
+    ...mapMutations({
+      setResult: "user/SET_RESULT"
+    }),
+    ...mapActions({
+      getResult: 'user/GET_RESULT'
+    }),
+    test () {
+      this.setResult("dasdasd")
+      // this.$store.dispatch("user/GET_RESULT")
+      // this.getResult()
+      // console.log('this.$store', this.$store)
+      // this.$store.commit('user/SET_RESULT', '测试测试')
+    }
   }
 }
 </script>
