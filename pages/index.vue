@@ -23,6 +23,7 @@
         <i class="fa fa-wheelchair" aria-hidden="true"></i>
         {{$store.state.user.result}}
         <el-button type="primary" @click="login">Login</el-button>
+        <el-button @click="$router.push({path: '/posts'})">跳转到posts</el-button>
       </div>
     </div>
   </section>
@@ -48,6 +49,20 @@ export default {
     }
     // ctx.redirect({path: '/posts'})
   },
+  scrollToTop: true,
+  data () {
+    return {
+      title: 'Hello lxs24sxl'
+    }
+  },
+  head () {
+    return {
+      title: this.title,
+      meta: [
+        { hid: 'description', name: 'description', content: 'My custom description' }
+      ]  
+    }
+  },
   methods: {
     login() {
       this.$message({ message: "登录成功", type: 'success' })
@@ -60,7 +75,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .container {
   min-height: 100vh;
   display: flex;

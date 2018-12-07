@@ -1,6 +1,12 @@
 <template>
   <div>
-    <nuxt/>
+    <no-ssr>
+      <nuxt />
+      <div slot="placeholder">
+        <i class="el-icon-loading"></i>
+        <span>loading...</span>
+      </div>
+    </no-ssr>
   </div>
 </template>
 
@@ -51,5 +57,24 @@ html {
 .button--grey:hover {
   color: #fff;
   background-color: #35495e;
+}
+.test-animation {
+  width: 100vw;
+  height: 100vw;
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation: test 3s;
+  display: none;
+}
+@keyframes test {
+  from {
+    background-color: rgba(0, 0, 0, 1);
+    display: block;
+  }
+  to {
+    background-color: rgba(0, 0, 0, 0.1);
+    display: none;
+  }
 }
 </style>

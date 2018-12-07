@@ -1,5 +1,5 @@
 <template>
   <div>
-    user
+    child
   </div>
 </template>
